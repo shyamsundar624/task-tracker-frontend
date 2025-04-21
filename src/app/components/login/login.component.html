@@ -1,0 +1,21 @@
+<div class="container mt-3">
+<h2 class="text-center">Login</h2>
+<p *ngIf="message" class="text-center">{{message}}</p>
+
+<form (ngSubmit)="handleSubmit()">
+
+    <div class="mb-3">
+    <label>Email</label>
+    <input type="email" class="form-control" [(ngModel)]="formData.email" name="email" required=""/>
+    </div>
+    
+    <div class="mb-3">
+    <label>Password</label>
+    <input type="password" class="form-control" [(ngModel)]="formData.password" name="password" required=""/>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Login</button>
+    </form>
+
+    <p>Don't have an Account? <a routerLink="/register" routerLinkActive="router-link-active">Register</a> </p>
+</div>

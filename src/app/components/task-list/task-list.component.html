@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h3 class="text-center mb-3">My Tasks</h3>
+
+    <div class="d-flex justify-content-between mb-3">
+        <button class="btn btn-primary" routerLink="/create" *ngIf= "isDisabled ">Add Task</button>
+<select [(ngModel)]="filterStatus" (change)="loadTasks()" class="form-select w-auto">
+<option value="">All</option>
+<option value="INPROGRESS">INPROGRESS</option>
+<option value="PENDING">PENDING</option>
+<option value="COMPLETED">COMPLETED</option>
+</select>
+    </div>
+
+    <table class="table table-striped">
+<thead>
+    <tr>
+        <th>Username</th>
+        <th>Titile</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Due</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let task of tasks">
+        <td>{{task.username}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.status}}</td>
+        <td>{{task.priority}}</td>
+        <td>{{task.dueDate}}</td>
+<td>
+    <button class="btn btn-warning btn-sm " [routerLink]="['/update',task.id]">Edit</button> &nbsp;
+    <button class="btn btn-danger btn-sm " (click)="deleteTask(task.id)" *ngIf= "isDisabled ">Delete</button>
+    
+</td>
+    </tr>
+</tbody>
+    </table>
+</div>

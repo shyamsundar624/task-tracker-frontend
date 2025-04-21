@@ -1,0 +1,55 @@
+<div class="container mt-4">
+<h3>Create New Task</h3>
+<form (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label>User</label>
+        <select class="form-control" [(ngModel)]="task.userObj" name="userObj">
+        <option>Select</option>
+        <option *ngFor="let user of usersName" [value]="user.id">{{user.name}}</option>
+        
+        </select>
+        </div>
+
+<div class="mb-3">
+<label>Title</label>
+<input type="text" class="form-control" [(ngModel)]="task.title" name="title" required=""/>
+</div>
+
+<div class="mb-3">
+<label>Description</label>
+<input type="text" class="form-control" [(ngModel)]="task.description" name="description" required=""/>
+</div>
+
+<div class="mb-3">
+<label>Due Date</label>
+<input type="date" class="form-control" [(ngModel)]="task.dueDate" name="dueDate" required=""/>
+</div>
+
+<div class="mb-3">
+<label>Priority</label>
+<select class="form-control" [(ngModel)]="task.priority" name="priority">
+<option>Select</option>
+<option>LOW</option>
+<option>MEDIUM</option>
+<option>HIGH</option>
+</select>
+</div>
+<div class="mb-3">
+    <label>Status</label>
+    <select class="form-control" [(ngModel)]="task.status" name="status">
+    <option>Select</option>
+    <option>PENDING</option>
+    <option>INPROGRESS</option>
+    <option>COMPLETED</option>
+    </select>
+    </div>
+
+    
+<div class="mb-3">
+    <label>Remarks</label>
+    <input type="text" class="form-control" [(ngModel)]="task.remarks" name="remarks" required=""/>
+    </div>
+<button type="submit" class="btn btn-success">Save Task</button>
+</form>
+</div>

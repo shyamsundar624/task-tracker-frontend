@@ -1,5 +1,25 @@
 # TaskTrackerUi
 
+ng new task-tracker-ui
+
+
+ng g class models/task --skip-tests
+ng g s services/task --skip-tests
+ng g c components/task-list --skip-tests
+ng g c components/task-create --skip-tests
+ng g c components/task-update --skip-tests
+
+
+npm i crypto-js
+
+npm i --save-dev @types/crypto-js
+
+ng g s services/guard --skip-tests
+
+ng g c components/login --skip-tests
+
+ng g c components/register --skip-tests
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
 ## Development server
